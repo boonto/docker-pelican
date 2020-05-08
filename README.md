@@ -19,3 +19,4 @@ docker run --detach \
 --volume pelican_files:/usr/share/nginx/html:ro \
 nginx
 ```
+Also provides `matplotlib`, `latex` and the [Source Code Pro](https://github.com/adobe-fonts/source-code-pro) font for use with the [m.css](https://mcss.mosra.cz/themes/pelican/) Pelican theme.
