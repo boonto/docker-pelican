@@ -3,7 +3,7 @@ ARG PELICAN_VERSION=4.2.0
 ARG SOURCE_CODE_PRO_VERSION=3.006R
 ARG MATPLOTLIB_VERSION=3.2.1
 RUN apt update && apt upgrade -y
-RUN apt install wget unzip -y
+RUN apt install wget unzip fontconfig -y
 RUN wget https://github.com/adobe-fonts/source-sans-pro/releases/download/${SOURCE_CODE_PRO_VERSION}/source-sans-pro-${SOURCE_CODE_PRO_VERSION}.zip && \
     unzip source-sans-pro-${SOURCE_CODE_PRO_VERSION}.zip && \
     rm source-sans-pro-${SOURCE_CODE_PRO_VERSION}.zip && \
