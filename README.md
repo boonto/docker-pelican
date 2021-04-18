@@ -10,7 +10,7 @@ docker run --detach \
 --name=pelican \
 --volume <your-site-dir>:/site \
 --volume pelican_files:/site-generated \
-boonto/pelican:3.8.1-4.2.0
+boonto/pelican:3.9.4-4.6.0
 ```
 May be used in conjunction with the [nginx](https://hub.docker.com/_/nginx) container to serve the output.
 ```
@@ -19,4 +19,4 @@ docker run --detach \
 --volume pelican_files:/usr/share/nginx/html:ro \
 nginx
 ```
-Also provides `matplotlib`, `latex` and the [Source Code Pro](https://github.com/adobe-fonts/source-code-pro) font for use with the [m.css](https://mcss.mosra.cz/themes/pelican/) Pelican theme.
+Also provides `matplotlib`, `latex` and the [Source Sans](https://github.com/adobe-fonts/source-sans) font for use with the [m.css](https://mcss.mosra.cz/themes/pelican/) Pelican theme.

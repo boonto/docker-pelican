@@ -1,15 +1,16 @@
-FROM python:3.8.3-slim-buster
-ARG PELICAN_VERSION=4.2.0
-ARG SOURCE_CODE_PRO_VERSION=3.006R
-ARG MATPLOTLIB_VERSION=3.2.1
+FROM python:3.9.4-slim-buster
+ARG PELICAN_VERSION=4.6.0
+ARG SOURCE_SANS_VERSION=3.028R
+ARG MATPLOTLIB_VERSION=3.4.1
 RUN apt update && apt upgrade -y
 RUN apt install wget unzip fontconfig -y
-RUN wget https://github.com/adobe-fonts/source-sans-pro/releases/download/${SOURCE_CODE_PRO_VERSION}/source-sans-pro-${SOURCE_CODE_PRO_VERSION}.zip && \
-    unzip source-sans-pro-${SOURCE_CODE_PRO_VERSION}.zip && \
-    rm source-sans-pro-${SOURCE_CODE_PRO_VERSION}.zip && \
+
+RUN wget https://github.com/adobe-fonts/source-sans/releases/download/${SOURCE_SANS_VERSION}/source-sans-3v028R.zip && \
+    unzip source-sans-3v028R.zip -d source-sans && \
+    rm source-sans-3v028R.zip && \
     mkdir -p /usr/share/fonts/opentype/adobe/ && \
-    cp source-sans-pro-${SOURCE_CODE_PRO_VERSION}/OTF/*.otf /usr/share/fonts/opentype/adobe/ && \
-    rm -rf source-sans-pro-${SOURCE_CODE_PRO_VERSION} && \
+    cp source-sans/OTF/*.otf /usr/share/fonts/opentype/adobe/ && \
+    rm -rf source-sans && \
     fc-cache -f -v
 RUN apt install -y \
     texlive-base \
