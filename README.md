@@ -10,7 +10,7 @@ docker run --detach \
 --name=pelican \
 --volume <your-site-dir>:/site \
 --volume pelican_files:/site-generated \
-boonto/pelican:3.9.4-4.6.0
+boonto/pelican:3.10.2-4.7.2
 ```
 May be used in conjunction with the [nginx](https://hub.docker.com/_/nginx) container to serve the output.
 ```
